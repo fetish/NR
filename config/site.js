@@ -1,3 +1,3 @@
-
-
-//requireAccountActivation
+module.exports.site = {
+    requireAccountActivation: false
+};

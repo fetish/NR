@@ -27,8 +27,11 @@ module.exports.routes = {
   // default view engine) your home page.
   //
   // (Alternatively, remove this and add an `index.html` file in your `assets` directory)
+  
+  /* STATIC PAGES 
+  ----------------------- */  
   '/': {
-    view: 'homepage'
+    view: 'static/homepage'
   },
 
 
@@ -53,7 +56,7 @@ module.exports.routes = {
   },
 
   
-    /* User Auth 
+  /* User Auth 
   ----------------------- */
   'get /signup': {
     controller: 'auth',
