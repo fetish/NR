@@ -44,3 +44,11 @@ code {
 .navbar {
   margin-bottom: 0px;
 }
+
+.navbar-brand {
+width: 240px;
+/* line-height: 40px; */
+}
+.navbar-brand img {
+max-height: 30px;
+}
