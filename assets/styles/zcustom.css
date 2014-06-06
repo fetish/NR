@@ -37,3 +37,10 @@ body > .container {
 code {
   font-size: 80%;
 }
+
+/* BOOTSTRAP MODS
+-------------------------------------------------- */
+/* remove heigh from navbar. */
+.navbar {
+  margin-bottom: 0px;
+}
