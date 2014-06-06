@@ -80,6 +80,11 @@ module.exports = {
 
       return obj;
     },
+    
+    verifyPassword: function (password) {
+        var isMatch = bcrypt.compareSync(password, this.password);
+        return isMatch;
+    },
 
     
   },

@@ -34,6 +34,75 @@ module.exports.routes = {
 
   // Custom routes here...
 
+  /** TODO: Seperate api routes and view routes */
+  /* USERS 
+  ----------------------- */
+  'get /api/users': {
+    controller: 'user',
+    action: 'index'
+  },
+
+  'get /api/users/:id': {
+    controller: 'user',
+    action: 'find'
+  },
+
+  'get /users/current': {
+    controller    : 'user',
+    action        : 'current'
+  },
+
+  
+    /* User Auth 
+  ----------------------- */
+  'get /signup': {
+    controller: 'auth',
+    action: 'signupPage'
+  },
+
+  'post /signup': {
+    controller: 'auth',
+    action: 'signup'
+    //view: 'users/signup'
+  },
+  'get /login': {
+    controller: 'auth',
+    action: 'loginPage'
+  },
+  
+  'post /auth/login': {
+    controller    : 'auth',
+    action        : 'login'
+  },
+
+  '/auth/logout': {
+    controller    : 'auth',
+    action        : 'logout'
+  },
+
+  /**
+  // form to get one time login email
+  'get /auth/forgot-password': {
+    controller    : 'auth',
+    action        : 'forgotPasswordForm'
+  },
+
+  // register  form
+  'get /auth/register': {
+    controller    : 'auth',
+    action        : 'registerForm'
+  },
+
+  'get /user/:id/activate/:token': {
+    controller: 'auth',
+    action: 'activate'
+  },
+
+  'post /user/:id/password/send-token': {
+    controller: 'auth',
+    action: 'SendPasswordResetToken'
+  },*/
+
 
   // If a request to a URL doesn't match any of the custom routes above,
   // it is matched against Sails route blueprints.  See `config/blueprints.js`
