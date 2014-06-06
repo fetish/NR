@@ -36,7 +36,11 @@ module.exports.routes = {
 
 
   // Custom routes here...
-
+  '/': {
+    controller: 'main',
+    action: 'homePage'
+  },
+  
   /** TODO: Seperate api routes and view routes */
   /* USERS 
   ----------------------- */
