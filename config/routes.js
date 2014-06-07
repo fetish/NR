@@ -30,13 +30,13 @@ module.exports.routes = {
   
   /* STATIC PAGES 
   ----------------------- */  
-  '/': {
-    view: 'static/homepage'
-  },
+//   '/': {
+//     view: 'static/homepage'
+//   },
 
 
   // Custom routes here...
-  '/': {
+  'get /': {
     controller: 'main',
     action: 'homePage'
   },
@@ -59,6 +59,20 @@ module.exports.routes = {
     action        : 'current'
   },
 
+  'get /user/:id': {
+    controller    : 'user',
+    action        : 'show'
+  },
+  
+  'get /user/:id/edit': {
+    controller    : 'user',
+    action        : 'edit'
+  },
+  
+  'post /user/:id/update': {
+    controller    : 'user',
+    action        : 'update'
+  },
   
   /* User Auth 
   ----------------------- */

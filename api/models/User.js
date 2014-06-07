@@ -17,13 +17,13 @@ module.exports = {
     username: {        /* The username and display name of user */
       type: 'string',
       required: true,
-//       unique: true
+      unique: true
     },
 
     email: {          /* The users email address*/
       type: 'email', // Email type will get validated by the ORM
-      required: true,
-      unique: true
+      required: true
+      //unique: true //TODO: doesnt work with memory DB. 
     },
 
     password: { /* The users encyrpted password.*/

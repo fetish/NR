@@ -72,6 +72,61 @@ module.exports = {
   },
   
 
-    
+  // render the profile view (e.g. /views/show.ejs)
+  show: function(req, res, next) {
+    User.findOne(req.param('id'), function foundUser(err, user) {
+      if (err) return next(err);
+      if (!user) return next();
+      res.view('profile', {
+        user: user,
+        pageTitle: user.username
+      });
+    });
+  },
+
+
+  // render the edit view (e.g. /views/edit.ejs)
+  edit: function(req, res, next) {
+
+    // Find the user from the id passed in via params
+    User.findOne(req.param('id'), function foundUser(err, user) {
+      if (err) return next(err);
+      if (!user) return next('User doesn\'t exist.');
+
+      res.view('editProfile', {
+        user: user,
+        pageTitle: 'edit user'
+      });
+    });
+  },
+  
+  
+
+  // process the info from edit view
+  update: function(req, res, next) {
+
+//     if (req.session.User.admin) {
+//       var userObj = {
+//         name: req.param('name'),
+//         title: req.param('title'),
+//         email: req.param('email'),
+//         admin: req.param('admin')
+//       }
+//     } else {
+      var userObj = {
+        email: req.param('email')
+//       }
+    }
+
+      User.update({id: req.param('id')}, userObj, function userUpdated(err) {
+      if (err) {
+        console.log(err);
+        return res.redirect('/user/' + req.param('id') + '/edit');
+      }
+
+      res.redirect('/user/' + req.param('id'));
+    });
+  },
+  
 };
 

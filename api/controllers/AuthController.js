@@ -36,17 +36,8 @@ module.exports = {
     var user = {
       username: req.param('username'),
       email: req.param('email'),
-      password: req.param('password'),
-      birthdate: req.param('birthdate')
+      password: req.param('password')
     }
-
-//     var user = {};    
-//     user.username = req.param("username");
-//     user.email = req.param("email");
-//     user.password = req.param("password");
-//     user.birthdate = req.param("birthdate");
-//     user.language = req.param("language");
-
 
     if( !sails.util.isUndefined(sails.config.site) ) {
       if( !sails.util.isUndefined( sails.config.site.requireAccountActivation ) ){
