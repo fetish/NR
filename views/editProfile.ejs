@@ -1,18 +1,2 @@
-	<form action="/user/<%= user.id %>/update" method="POST" class="form-signin">
-		<h2> Hey, you're editing a user... </h2>
-
-		<input value="<%= user.username %>" name="username" type="text" class="form-control"/>
-		<input value="<%= user.email %>" name="email" type="text" class="form-control"/>
-<!-- 		<% if (session.authenticated && session.User.admin) { %>
-			<% if (user.admin) { %>
-				<input type="hidden" name="admin" value="unchecked">
-				<label class="checkbox"><input type="checkbox" name="admin" checked> Admin</label>
-			<% } else { %>
-				<input type="hidden" name="admin" value="unchecked">
-				<label class="checkbox"><input type="checkbox" name="admin"> Admin</label>
-			<% } %> 
-		<% } %>  -->
-		<input type="submit" value="Proceed" class="btn btn-lg btn-primary btn-block"/>
-		<input type="hidden" name="_csrf" value="<%= _csrf %>" />
-		<input type="hidden" name="id" value="<%= user.id %>" />
-	</form>
+<h2> Hey, you're editing a user... </h2>
+<%- partial('partials/forms/editProfile')%>
