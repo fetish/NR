@@ -22,17 +22,29 @@ module.exports = {
     }
     // return index page and let angular.js construct the page
 //     res.view('home/index');
-    res.view('signup');
+//     res.view('signup');
+    res.view('signup', {
+        pageTitle: 'Signup'
+      });
   },
 
   // POST Signup method
   signup: function (req, res, next) {
     var requireAccountActivation = false;
-    var user = {};
-    user.username = req.param("username");
-    user.email = req.param("email");
-    user.password = req.param("password");
-    user.birthdate = req.param("birthdate");
+    
+    
+    var user = {
+      username: req.param('username'),
+      email: req.param('email'),
+      password: req.param('password'),
+      birthdate: req.param('birthdate')
+    }
+
+//     var user = {};    
+//     user.username = req.param("username");
+//     user.email = req.param("email");
+//     user.password = req.param("password");
+//     user.birthdate = req.param("birthdate");
 //     user.language = req.param("language");
 
 
@@ -165,7 +177,10 @@ module.exports = {
     }
     // return index page and let angular.js construct the page
 //     res.view('home/index');
-    res.view('login');
+//     res.view('login');
+    res.view('login', {
+        pageTitle: 'Login'
+      });
   },
   
   // POST login method
